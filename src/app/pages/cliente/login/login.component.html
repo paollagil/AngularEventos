@@ -1,0 +1,26 @@
+<div class="container mt-5" style="width: 30%;">
+    <!--<img src="https://brasscom.org.br/wp-content/uploads/2017/08/Qintess-Logo-site.jpg" style="width: 100%;">-->
+    <img src="https://image.freepik.com/free-icon/ticket_318-1629.jpg"
+        style="width: 30%; margin-left: 35%; margin-bottom: 1em;">
+
+    <form [formGroup]="formLogin">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="email@email.com">
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" formControlName="senha">
+            </div>
+            <p></p>
+            <div class="form-group">
+                <button class="btn btn-block btn-dark" (click)="logar()">Entrar</button>
+            </div>
+        </div>
+    </form>
+    <div class="mt-4" style="text-align: center;">
+        <label>Não tem login? <b>Cadastre-se</b> abaixo</label>
+        <button class="btn btn-block btn-primary" [routerLink]="['/cliente/cadastro']">Cadastre-se</button>
+    </div>
+</div>

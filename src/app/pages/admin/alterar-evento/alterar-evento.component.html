@@ -1,0 +1,60 @@
+<admin-menu></admin-menu>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/eventos']"
+                            routerLinkActive="router-link-active">Eventos</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Novo Evento</li>
+                </ol>
+            </nav>
+            <form [formGroup]="formEvento">
+                <div class="form-group" style="width: 45%; display:inline-block; margin-right: 5%">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" formControlName="nome" id="inputNome">
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" class="form-control" formControlName="descricao" id="inputDescricao">
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data e Hora do Evento</label>
+                        <input type="datetime-local" class="form-control" formControlName="dataHora" id="inputData">
+                    </div>
+                    <div class="form-group">
+                        <label for="local">Local</label>
+                        <select class="form-control" formControlName="local">
+                            <option *ngFor="let local of locais;" value="{{local.idLocal}}">{{local.nome}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" style="width: 45%; display:inline-block;">
+                    <div class="form-group">
+                        <label for="valor">Valor do Ingresso</label>
+                        <input type="text" class="form-control" formControlName="valorIngresso" id="inputValor">
+                    </div>
+                    <div class="form-group">
+                        <label for="ingressos">Quantidade de Ingressos</label>
+                        <input type="number" class="form-control" formControlName="quantidadeIngresso" id="inputIngresso" value="{{evento.dataLimite}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status do Evento</label>
+                        <select class="form-control" formControlName="indicador" disabled>
+                            <option value="0" selected>0</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="data-limite">Data Limite de Vendas</label>
+                        <input type="datetime-local" class="form-control" formControlName="dataLimite" id="inputDataLimite" value="{{evento.dataLimite}}">
+                    </div>
+                </div>
+                <div class="form-group" style=" width:100%; text-align: rigth;">
+                    <button type="submit" class="btn btn-primary" (click)="alterarEvento()">Alterar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

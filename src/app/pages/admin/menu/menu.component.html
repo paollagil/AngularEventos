@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand text-white" [routerLink]="['/admin/home']" routerLinkActive="router-link-active" ><strong>Admin</strong></a>
+  
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link text-white" [routerLink]="['/admin/locais']"><strong>Locais</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" [routerLink]="['/admin/eventos']"><strong>Eventos</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" [routerLink]="['/admin/clientes']"><strong>Clientes</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" [routerLink]="['/admin/administradores']"><strong>Administradores</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" [routerLink]="['/cliente/home']" routerLinkActive="router-link-active" ><strong>Go Cliente</strong></a>
+        </li>
+      </ul>
+    </div>
+  </nav>

@@ -1,0 +1,20 @@
+<admin-menu></admin-menu>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="['/admin/home']" routerLinkActive="router-link-active">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Clientes</li>
+        </ol>
+      </nav>
+
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary mt-6" [routerLink]="['/admin/form-cliente']"
+        routerLinkActive="router-link-active">Novo</button>
+    </div>
+  </div>
+  <app-clientes-listagem></app-clientes-listagem>
+</div>

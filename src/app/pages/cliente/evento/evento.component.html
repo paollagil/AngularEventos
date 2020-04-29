@@ -1,0 +1,32 @@
+<cliente-menu></cliente-menu>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-9">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a [routerLink]="['/cliente/home']" routerLinkActive="router-link-active">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">{{evento.nome}}</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-md-9">
+            
+            <div class="card mb-3">
+                <h5 class="card-header">{{evento.nome}} - {{evento.dataHora | date:'dd/MM/yyyy'}}</h5>
+                <div class="card-body">
+                    <p class="card-text">{{evento.descricao}}</p>
+                    <p class="card-text">Local: {{evento.local.nome}} - {{evento.local.endereco}}</p>
+                    <p class="card-text">Horário: {{evento.dataHora | date:'hh:mm'}}</p>
+                    <p class="card-text">Ingressos Disponíveis: {{ingressosDisponiveis }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button class="" [disabled]="getBotaoDisponivel()" [className]="getBotaoDisponivel() ? 'btn btn-block btn-primary disabled' : 'btn btn-block btn-primary'" (click)="adicionarCarrinho()">Adicionar ao Carrinho</button>
+            <div class="card mt-3">
+                <h5 class="card-header">Vendas até {{evento.dataLimite | date:'dd/MM/yyyy'}}</h5>
+            </div>
+        </div>
+    </div>
+</div>

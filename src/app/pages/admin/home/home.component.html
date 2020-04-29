@@ -1,0 +1,11 @@
+<admin-menu></admin-menu>
+<div class="container mt-5">
+    <div class="card mr-3 mb-3" *ngFor="let evento of eventos;" style="width: 22rem; display: inline-block;">
+        <h5 class="card-header">{{evento.nome}}</h5>
+        <div class="card-body">
+          <h5 class="card-title">{{evento.dataHora | date:'dd/MM/yyyy hh:mm'}}</h5>
+          <p class="card-text">{{evento.descricao}}</p>
+          <a href="#" class="btn text-white" style="background-color: #e3006b; text-align:right;"><strong>Detalhes</strong></a>
+        </div>
+    </div>
+</div>

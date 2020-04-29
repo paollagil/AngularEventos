@@ -1,0 +1,25 @@
+<table class="table table-hover table-bordered mt-5">
+    <thead class="bg-primary text-white">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Endereco</th>
+            <th>CEP</th>
+            <th>Capacidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let local of locais;">
+            <td style="vertical-align: middle;">{{local.idLocal}}</td>
+            <td style="vertical-align: middle;">{{local.nome}}</td>
+            <td style="vertical-align: middle;">{{local.endereco}}</td>
+            <td style="vertical-align: middle;">{{local.cep}}</td>
+            <td style="vertical-align: middle;">{{local.capacidade}}</td>
+            <td>
+                <button class="btn btn-warning text-white" routerLink="/admin/alterar-local/{{local.idLocal}}" routerLinkActive="router-link-active" >Editar</button>
+                <button class="btn btn-danger ml-1" (click)="deletarLocal(local.idLocal)">Deletar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

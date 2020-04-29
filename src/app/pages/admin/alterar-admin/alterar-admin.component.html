@@ -1,0 +1,34 @@
+<admin-menu></admin-menu>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin/administradores']"
+                            routerLinkActive="router-link-active">Administradores</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Alterar Administrador</li>
+                </ol>
+            </nav>
+            <form [formGroup]="formAdmin">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" formControlName="nome" value="{{admin.nome}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" formControlName="email" value="{{admin.email}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" class="form-control" formControlName="senha" value="{{admin.senha}}">
+                    </div>
+                </div>
+                <div class="form-group" style=" width:100%; text-align: center;">
+                    <button type="button" class="btn btn-primary" (click)="alteraAdmin()">Alterar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

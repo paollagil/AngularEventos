@@ -1,0 +1,28 @@
+<div class="container mt-5" style="width: 30%;">
+    <h5 class="p-2 mb-4" style="text-align: center;">Cadastro de Cliente</h5>
+    <form [formGroup]="formCliente">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" formControlName="nome" placeholder="Digite seu nome">
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" class="form-control" formControlName="cpf" placeholder="999.999.999-99">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="email@email.com">
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" formControlName="senha">
+            </div>
+
+        </div>
+        <div class="form-group" style=" width:100%; text-align: center;">
+            <button type="button" class="btn btn-block btn-primary" (click)="salvarCliente()">Salvar</button>
+            <button type="button" class="btn btn-block btn-dark" [routerLink]="['/cliente/login']">Voltar</button>
+        </div>
+    </form>
+</div>

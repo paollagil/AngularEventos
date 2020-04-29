@@ -1,0 +1,31 @@
+<table class="table table-hover table-bordered mt-5">
+    <thead class="bg-primary text-white">
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Data e Hora</th>
+        <th>Quantidade</th>
+        <th>ID Local</th>
+        <th>Valor</th>
+        <th>Data Limite</th>
+        <th>Descrição</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of eventos;">
+        <td style="vertical-align: middle;">{{evento.idEvento}}</td>
+        <td style="vertical-align: middle;">{{evento.nome}}</td>
+        <td style="vertical-align: middle;">{{evento.dataHora | date:'dd/MM/yyyy hh:mm'}}</td>
+        <td style="vertical-align: middle;">{{evento.quantidadeIngresso}}</td>
+        <td style="vertical-align: middle;">{{evento.local.idLocal}}</td>
+        <td style="vertical-align: middle;">{{evento.valorIngresso | currency:'BRL':true:'1.2-2'}}</td>
+        <td style="vertical-align: middle;">{{evento.dataLimite | date:'dd/MM/yyyy'}}</td>
+        <td style="vertical-align: middle;">...</td>
+          <td>
+              <button class="btn btn-warning text-white" routerLink="/admin/alterar-evento/{{evento.idEvento}}" routerLinkActive="router-link-active">Editar</button>
+              <button class="btn btn-danger ml-1" (click)="deletarEvento(evento.idEvento)">Deletar</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>

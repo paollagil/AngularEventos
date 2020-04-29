@@ -1,0 +1,31 @@
+<div class="card mb-3">
+    <h5 class="card-header">
+        <p style="display: inline-block; width: calc(100% - 35px);">{{ itemCarrinho.evento.idEvento }} -
+            {{ itemCarrinho.evento.nome }} -
+            {{itemCarrinho.evento.dataHora | date:'dd/MM/yyyy'}}</p>
+        <button class="btn text-white" style="background-color: #e3006b;"
+            (click)="removerIngressoEvento()"><strong>x</strong></button>
+    </h5>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-2">
+                <label>Quantidade</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-primary font-weight-bold" type="button" id="diminuir" (click)="menosIngresso()">-</button>
+                    </div>
+                    <input class="form-control" type="number" min="1" max="4" [(formControl)]="quantidade">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary font-weight-bold" type="button" id="adicionar" (click)="maisIngresso()">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <p class="card-text">Unidade: {{itemCarrinho.evento.valorIngresso | currency:'BRL':true:'1.2-2'}}</p>
+                <p class="card-text">Total: {{getTotalIngresso() | currency:'BRL':true:'1.2-2'}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

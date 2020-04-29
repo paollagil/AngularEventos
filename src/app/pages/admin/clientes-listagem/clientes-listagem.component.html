@@ -1,0 +1,23 @@
+<table class="table table-hover table-bordered mt-5">
+    <thead class="bg-primary text-white">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente of clientes;">
+            <td style="vertical-align: middle;">{{cliente.idCliente}}</td>
+            <td style="vertical-align: middle;">{{cliente.nome}}</td>
+            <td style="vertical-align: middle;">{{cliente.cpf}}</td>
+            <td style="vertical-align: middle;">{{cliente.email}}</td>
+            <td>
+                <button class="btn btn-warning text-white" routerLink="/admin/alterar-cliente/{{cliente.idCliente}}" routerLinkActive="router-link-active">Editar</button>
+                <button class="btn btn-danger ml-1" (click)="deletarCliente(cliente.idCliente)">Deletar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

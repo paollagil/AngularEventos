@@ -1,0 +1,21 @@
+<table class="table table-hover table-bordered mt-5">
+    <thead class="bg-primary text-white">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let administrador of administradores;">
+            <td style="vertical-align: middle;">{{administrador.idAdministrador}}</td>
+            <td style="vertical-align: middle;">{{administrador.nome}}</td>
+            <td style="vertical-align: middle;">{{administrador.email}}</td>
+            <td>
+                <button class="btn btn-warning text-white" routerLink="/admin/alterar-admin/{{administrador.idAdministrador}}" routerLinkActive="router-link-active">Editar</button>
+                <button class="btn btn-danger ml-1" (click)="deletarAdmin(administrador.idAdministrador)">Deletar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

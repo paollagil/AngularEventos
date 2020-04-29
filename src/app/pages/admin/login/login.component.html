@@ -1,0 +1,22 @@
+<div class="container" style="width: 30%; margin-top: 3em;">
+    <!--<img src="https://brasscom.org.br/wp-content/uploads/2017/08/Qintess-Logo-site.jpg" style="width: 100%;">-->
+    <img src="https://cdn.onlinewebfonts.com/svg/img_130996.png"
+        style="width: 20%; margin-left: 40%; margin-bottom: 1em;">
+
+    <form [formGroup]="formLogin">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="email@email.com">
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" formControlName="senha">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-block btn-dark" (click)="mostraValores()">Entrar</button>
+            </div>
+        </div>
+
+    </form>
+</div>
